@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>D-Day 계산기</title>
+</head>
+<body>
+
+<h1>D-Day 계산기</h1>
+
+<input type="date" id="date">
+<button onclick="calc()">계산하기</button>
+
+<p id="result"></p>
+
+<script>
+function calc() {
+  const selected = new Date(document.getElementById("date").value);
+  const today = new Date();
+
+  const diff = selected - today;
+
+  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+  document.getElementById("result").innerText =
+    "D-Day까지 " + days + "일 남았습니다!";
+}
+</script>
+
+</body>
+</html>
