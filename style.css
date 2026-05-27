@@ -1,237 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Cafe24+Oneprettynight&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-:root {
-  --primary: #D4C2F3;
-  --primary-dark: #BFA7EA;
-  --bg: #FCFAFF;
-  --text: #5F5B6B;
-  --card: #F3EEFF;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-* {
-  box-sizing: border-box;
+body{
+    font-family:'Pretendard', sans-serif;
+    background-color:#f7f9f7;
+    color:#333;
+    line-height:1.7;
 }
 
-body {
-  margin: 0;
+/* 상단 메뉴 */
 
-  font-family:
-    "Cafe24 Oneprettynight",
-    "Noto Sans KR",
-    sans-serif;
+nav{
+    background-color:white;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
 
-  background: linear-gradient(to bottom, #FCFAFF, #F3ECFF);
+    position:sticky;
+    top:0;
 
-  color: var(--text);
-
-  line-height: 1.9;
-
-  letter-spacing: 0.01em;
-
-  font-size: 1.08rem;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-header {
-  padding: 4rem 1rem 3rem;
-
-  text-align: center;
-
-  background: rgba(255,255,255,0.5);
-
-  backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid rgba(255,255,255,0.6);
+nav a{
+    text-decoration:none;
+    color:#444;
+    font-weight:600;
+    transition:0.3s;
 }
 
-header h1 {
-  font-family: "Gowun Batang", serif;
-
-  font-size: 2.7rem;
-
-  font-weight: 700;
-
-  margin-bottom: .3rem;
-
-  color: #4F4657;
+nav a:hover{
+    color:#4CAF50;
 }
 
-header .subtitle {
-  opacity: .85;
+/* 메인 영역 */
 
-  font-size: 1.1rem;
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:60px 20px;
 }
 
-nav {
-  display: flex;
+/* 제목 */
 
-  justify-content: center;
-
-  gap: .8rem;
-
-  flex-wrap: wrap;
-
-  padding: 1rem;
-
-  margin-top: .5rem;
+h1{
+    font-size:50px;
+    margin-bottom:20px;
+    color:#222;
 }
 
-nav a {
-  text-decoration: none;
-
-  font-family:
-    "Cafe24 Oneprettynight",
-    cursive;
-
-  font-size: 1.05rem;
-
-  color: var(--text);
-
-  background: rgba(255,255,255,0.88);
-
-  padding: .7rem 1.3rem;
-
-  border-radius: 999px;
-
-  transition: all .25s ease;
-
-  box-shadow:
-    0 4px 12px rgba(0,0,0,.04),
-    inset 0 1px 0 rgba(255,255,255,.7);
+h2{
+    margin-top:40px;
+    margin-bottom:15px;
+    color:#4CAF50;
 }
 
-nav a:hover {
-  transform: translateY(-2px);
+/* 문단 */
 
-  background: var(--primary);
-
-  color: white;
+p{
+    font-size:18px;
+    margin-bottom:15px;
 }
 
-.container {
-  max-width: 900px;
+/* 카드 느낌 박스 */
 
-  margin: 2rem auto;
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    margin-top:30px;
 
-  padding: 2rem;
-
-  background: var(--card);
-
-  border-radius: 30px;
-
-  backdrop-filter: blur(14px);
-
-  box-shadow:
-    0 10px 30px rgba(183,160,230,.10),
-    0 2px 8px rgba(0,0,0,.03);
-
-  border: 1px solid rgba(255,255,255,.8);
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
 }
 
-section {
-  margin-bottom: 2rem;
+/* 버튼 */
+
+button{
+    background-color:#4CAF50;
+    color:white;
+
+    border:none;
+    border-radius:12px;
+
+    padding:12px 20px;
+    font-size:16px;
+
+    cursor:pointer;
+    transition:0.3s;
 }
 
-h2, h3 {
-  font-family: "Gowun Batang", serif;
-
-  color: #4F4657;
-
-  margin-bottom: .8rem;
+button:hover{
+    background-color:#43a047;
+    transform:translateY(-2px);
 }
 
-.contact-form {
-  display: grid;
+/* 입력창 */
 
-  gap: .8rem;
+input{
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:16px;
 }
 
-input,
-textarea {
-  width: 100%;
+/* 리스트 */
 
-  padding: .95rem 1rem;
-
-  border: none;
-
-  border-radius: 18px;
-
-  background: rgba(255,255,255,0.95);
-
-  box-shadow: inset 0 1px 4px rgba(0,0,0,.04);
-
-  font: inherit;
-
-  outline: none;
+ul{
+    margin-top:20px;
 }
 
-input:focus,
-textarea:focus {
-  border: 2px solid var(--primary);
+li{
+    background:white;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+
+    list-style:none;
 }
 
-button {
-  padding: .95rem 1.4rem;
+/* footer */
 
-  border: none;
-
-  border-radius: 999px;
-
-  background: linear-gradient(to bottom, #E1D3FF, #D4C2F3);
-
-  color: white;
-
-  font-family:
-    "Cafe24 Oneprettynight",
-    cursive;
-
-  font-size: 1.05rem;
-
-  cursor: pointer;
-
-  transition: all .25s ease;
-
-  box-shadow:
-    0 8px 18px rgba(212,194,243,.45),
-    inset 0 2px 4px rgba(255,255,255,.4);
-}
-
-button:hover {
-  background: linear-gradient(to bottom, #D5C3F8, #BFA7EA);
-
-  transform: translateY(-3px) scale(1.02);
-}
-
-footer {
-  text-align: center;
-
-  padding: 2rem 1rem 3rem;
-
-  color: #8B8591;
-
-  font-size: 1rem;
-}
-
-@media (max-width: 600px) {
-
-  header {
-    padding: 3rem 1rem 2rem;
-  }
-
-  header h1 {
-    font-size: 2.2rem;
-  }
-
-  .container {
-    margin: 1rem;
-
-    padding: 1.2rem;
-
-    border-radius: 24px;
-  }
-
-  nav a {
-    font-size: .95rem;
-
-    padding: .6rem 1rem;
-  }
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+    margin-top:60px;
 }
