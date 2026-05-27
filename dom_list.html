@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>댓글 추가 프로그램</title>
+</head>
+
+<body>
+
+<h1>댓글 추가하기</h1>
+
+<input type="text" id="comment">
+
+<button onclick="addComment()">
+  추가
+</button>
+
+<ul id="list"></ul>
+
+<script>
+
+function addComment() {
+
+  const input =
+    document.getElementById("comment");
+
+  const text = input.value;
+
+  const li =
+    document.createElement("li");
+
+  li.innerText = text;
+
+  li.onclick = function() {
+    li.remove();
+  };
+
+  document.getElementById("list")
+    .appendChild(li);
+
+  input.value = "";
+}
+
+</script>
+
+</body>
+</html>
