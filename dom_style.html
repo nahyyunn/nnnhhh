@@ -20,6 +20,7 @@
       font-size:50px;
       color:brown;
       font-weight:bold;
+      transition:0.3s;
     }
 
     button{
@@ -62,22 +63,56 @@
 
 <script>
 
+let colorChanged = false;
+let sizeChanged = false;
+let backgroundChanged = false;
+
 function changeColor(){
 
-  document.getElementById("text")
-    .style.color = "blue";
+  const text =
+    document.getElementById("text");
+
+  if(colorChanged){
+    text.style.color = "brown";
+    colorChanged = false;
+  }
+
+  else{
+    text.style.color = "blue";
+    colorChanged = true;
+  }
 }
 
 function changeSize(){
 
-  document.getElementById("text")
-    .style.fontSize = "70px";
+  const text =
+    document.getElementById("text");
+
+  if(sizeChanged){
+    text.style.fontSize = "50px";
+    sizeChanged = false;
+  }
+
+  else{
+    text.style.fontSize = "70px";
+    sizeChanged = true;
+  }
 }
 
 function changeBackground(){
 
-  document.getElementById("text")
-    .style.backgroundColor = "pink";
+  const text =
+    document.getElementById("text");
+
+  if(backgroundChanged){
+    text.style.backgroundColor = "gold";
+    backgroundChanged = false;
+  }
+
+  else{
+    text.style.backgroundColor = "pink";
+    backgroundChanged = true;
+  }
 }
 
 function toggleText(){
