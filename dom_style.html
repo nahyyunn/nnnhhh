@@ -1,27 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <title>DOM 스타일 변경기</title>
+  <meta charset="UTF-8">
+  <title>DOM 스타일 제어하기</title>
+
+  <style>
+
+    body{
+      text-align:center;
+      font-family:Arial;
+      margin-top:50px;
+    }
+
+    #text{
+      background-color:gold;
+      padding:40px;
+      width:700px;
+      margin:auto;
+      font-size:50px;
+      color:brown;
+      font-weight:bold;
+    }
+
+    button{
+      margin:20px 10px;
+      padding:15px 25px;
+      font-size:20px;
+      cursor:pointer;
+      border-radius:10px;
+      border:none;
+    }
+
+  </style>
 </head>
 
 <body>
 
-<h1 id="text">안녕하세요 😄</h1>
+<h1>실습 1 : DOM 스타일 제어하기</h1>
 
-<button onclick="changeStyle()">
-  스타일 바꾸기
+<div id="text">
+  이 문장의 스타일을 바꿔보세요!
+</div>
+
+<br>
+
+<button onclick="changeColor()">
+  글자색 변경
+</button>
+
+<button onclick="changeSize()">
+  크게 보기
+</button>
+
+<button onclick="changeBackground()">
+  배경 강조
+</button>
+
+<button onclick="toggleText()">
+  숨기기/보이기
 </button>
 
 <script>
 
-function changeStyle() {
+function changeColor(){
+
+  document.getElementById("text")
+    .style.color = "blue";
+}
+
+function changeSize(){
+
+  document.getElementById("text")
+    .style.fontSize = "70px";
+}
+
+function changeBackground(){
+
+  document.getElementById("text")
+    .style.backgroundColor = "pink";
+}
+
+function toggleText(){
 
   const text =
     document.getElementById("text");
 
-  text.style.color = "white";
-  text.style.backgroundColor = "tomato";
-  text.style.fontSize = "40px";
+  if(text.style.display === "none"){
+    text.style.display = "block";
+  }
+
+  else{
+    text.style.display = "none";
+  }
 }
 
 </script>
