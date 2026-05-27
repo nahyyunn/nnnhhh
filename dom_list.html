@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM 스타일 변경기</title>
+</head>
+
+<body>
+
+<h1 id="text">안녕하세요 😄</h1>
+
+<button onclick="changeStyle()">
+  스타일 바꾸기
+</button>
+
+<script>
+
+function changeStyle() {
+
+  const text =
+    document.getElementById("text");
+
+  text.style.color = "white";
+  text.style.backgroundColor = "tomato";
+  text.style.fontSize = "40px";
+}
+
+</script>
+
+</body>
+</html>
