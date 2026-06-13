@@ -135,3 +135,25 @@ footer{
     color:#777;
     margin-top:60px;
 }
+.project-card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+    color: #7aa37a;
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    color: #7aa37a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
