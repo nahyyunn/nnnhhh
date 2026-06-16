@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>피자 주문서</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 30px;
+}
+
+.menu {
+    margin: 10px 0;
+}
+
+button {
+    margin-top: 15px;
+    padding: 8px 15px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>피자 주문서 (이벤트 활용)</h1>
+
+<div class="menu">
+    <input type="checkbox" id="combo">
+    콤비네이션 피자 (15,000원)
+    <input type="number" id="comboQty" value="1" min="1">
+</div>
+
+<div class="menu">
+    <input type="checkbox" id="pepperoni">
+    페퍼로니 피자 (12,000원)
+    <input type="number" id="pepperoniQty" value="1" min="1">
+</div>
+
+<div class="menu">
+    <input type="checkbox" id="cheese">
+    치즈 토핑 추가 (2,000원)
+    <input type="number" id="cheeseQty" value="1" min="1">
+</div>
+
+<div class="menu">
+    <input type="checkbox" id="cola">
+    콜라 1.25L (1,500원)
+    <input type="number" id="colaQty" value="1" min="1">
+</div>
+
+<br>
+
+주소:
+<input type="text" id="address" placeholder="주소를 입력하세요" size="50">
+
+<br><br>
+
+주문 합계:
+
+<input type="text" id="total" value="0" readonly> 원
+
+<br><br>
+
+<button onclick="orderPizza()">주문하기</button>
+
+<button onclick="resetOrder()">초기화</button>
+
+<script>
+
+function orderPizza(){
+
+    let total = 0;
+
+    if(combo.checked){
+        total += 15000 * comboQty.value;
+    }
+
+    if(pepperoni.checked){
+        total += 12000 * pepperoniQty.value;
+    }
+
+    if(cheese.checked){
+        total += 2000 * cheeseQty.value;
+    }
+
+    if(cola.checked){
+        total += 1500 * colaQty.value;
+    }
+
+    document.getElementById("total").value = total;
+
+    alert("주문이 완료되었습니다!");
+}
+
+function resetOrder(){
+
+    document.querySelectorAll("input[type=checkbox]")
+        .forEach(c => c.checked = false);
+
+    document.querySelectorAll("input[type=number]")
+        .forEach(n => n.value = 1);
+
+    document.getElementById("address").value = "";
+    document.getElementById("total").value = 0;
+}
+
+</script>
+
+</body>
+</html>
