@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>키보드 자동차</title>
+
+<style>
+    body {
+        font-family: Arial;
+        margin: 30px;
+    }
+
+    #car {
+        width: 120px;
+        height: 60px;
+        background-color: violet;
+        border: 3px solid black;
+        text-align: center;
+        line-height: 60px;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        left: 200px;
+        top: 200px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>실습 2: 키보드 자동차</h1>
+<p>방향키(← ↑ → ↓)를 눌러 자유롭게 운전해보세요.</p>
+
+<div id="car">🚗</div>
+
+<script>
+const car = document.getElementById("car");
+
+let x = 200;
+let y = 200;
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "ArrowLeft"){
+        x -= 20;
+    }
+
+    if(event.key === "ArrowRight"){
+        x += 20;
+    }
+
+    if(event.key === "ArrowUp"){
+        y -= 20;
+    }
+
+    if(event.key === "ArrowDown"){
+        y += 20;
+    }
+
+    car.style.left = x + "px";
+    car.style.top = y + "px";
+
+});
+</script>
+
+</body>
+</html>
